@@ -26,15 +26,21 @@ A full-stack art gallery web application built with **Node.js**, **Express**, **
 
 ---
 
-## Screenshots
+## Lessons Learned
 
-> _Add 2–3 screenshots showing your homepage, dashboard, and gallery here_
+- Hands-on experience with full-stack development
+- How to manage file uploads and dynamic content
+- User session handling and form validation
+- Structuring scalable Express apps
 
 ---
 
-## How to Run Locally
+## Author
 
-1. **Clone the repo**  
-```bash
-git clone https://github.com/yourusername/art-gallery.git
-cd art-gallery
+Vaishnavi Paturkar 
+_B.Tech IT Student | Frontend & Full Stack Learner_
+
+🔗 [Connect with me on LinkedIn](www.linkedin.com/in/vaishnavi-paturkar-6b51b92b2)
+
+---
+
