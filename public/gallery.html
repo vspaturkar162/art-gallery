@@ -1,0 +1,74 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art Gallery | Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <h1>Art Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <form action="/search" method="GET" class="search-bar">
+      <input type="text" name="query" placeholder="Search artworks or artists..." required>
+      <button type="submit">🔍</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="gallery-section">
+      <h2>Our Collection</h2>
+      <div class="gallery-grid">
+        <div class="art-card">
+          <img src="images/wine.jpg" onclick="openModal('images/wine.jpg')" alt="Wine & Whimsy">
+          <h3>Wine & Whimsy</h3>
+          <p>By Vaishnavi Paturkar</p>
+        </div>
+        <div class="art-card">
+          <img src="images\dog.jpg" onclick="openModal('images/dog.jpg')" alt="Artwork 2">
+          <h3>Dog Sketch</h3>
+          <p>By Vaishnavi Paturkar</p>
+        </div>
+        <div class="art-card">
+          <img src="images\snake.jpg" onclick="openModal('images/snake.jpg')" alt="Artwork 3">
+          <h3>Snake</h3>
+          <p>By Vaishnavi Paturkar</p>
+        </div>
+        <div class="art-card">
+          <img src="images\nature.jpg" onclick="openModal('images/nature.jpg')" alt="Artwork 3">
+          <h3>Nature's Calm</h3>
+          <p>By Vaishnavi Paturkar</p>
+        </div>
+        <div class="art-card">
+          <img src="images\girlies.jpg" onclick="openModal('images/girlies.jpg')" alt="Artwork 3">
+          <h3>Me & My Girlies</h3>
+          <p>By Vaishnavi Paturkar</p>
+        </div>
+        <!-- Add more artworks as needed -->
+        <!-- <div id="artworkContainer"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Modal Popup -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Large Image">
+  </div>
+  <!-- <div id="gallery" class="art-grid"></div> -->
+
+  <footer>
+    <p>© 2025 My Art Gallery. All rights reserved.</p>
+  </footer>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>

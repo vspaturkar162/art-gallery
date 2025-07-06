@@ -1,0 +1,99 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art Gallery | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+        <h2>Welcome to My Art Gallery</h2>
+        <h1 class="site-title">Palette Dreams</h1>
+        <p>Where art comes alive</p>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <button class="userbtn" onclick="openModal('loginModal')">Login</button>
+          <button class="userbtn" onclick="openModal('registerModal')">Register</button>
+        </nav>
+        <form action="/search" method="GET" class="search-bar">
+          <input type="text" name="query" placeholder="Search artworks or artists..." required>
+          <button type="submit">🔍</button>
+        </form>
+  </header>
+  
+  <main>
+    <div class="hero" style="background: url('images/background_img.png') center/cover no-repeat; height: auto;">
+      <section>
+      <h2>Experience the Beauty of Art</h2>
+      <p>Explore a curated collection of stunning artworks.</p>
+      </section>
+      <section class="featured">
+        <h2>Featured Art</h2>
+        <div class="featured-artworks">
+          <div class="art-grid">
+            <div><img src="images/featured_art.png"><p>Geometric Muse</p></div>
+            <div><img src="images/sunset_dreams.png"><p>Sunset Dreams</p></div>
+          </div>
+          <a href="gallery.html">View Full Gallery →</a>
+        </div>
+      </section>
+      <section class="quotes">
+        <blockquote>"Every artist was first an amateur." – Ralph Waldo Emerson</blockquote>
+        <blockquote>"Art enables us to find ourselves and lose ourselves at the same time." – Thomas Merton</blockquote>
+      </section>
+
+      <section class="intro">
+        <h2>About Us</h2>
+        <p>We are a digital platform to showcase beautiful artworks by talented artists. Our goal is to bring art closer to people.</p>
+        <a href="about.html">Read More →</a>
+      </section>
+
+    </div>
+  </main>
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Have questions or want to collaborate?</p>
+    <p><strong>Email:</strong> vaishanavipaturkar162@gmail.com</p>
+    <p><strong>Instagram:</strong> @__vaishnavi__16_</p>
+  </section>
+
+  <footer>
+    <p>© 2025 My Art Gallery. All rights reserved.</p>
+  </footer>
+
+    <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2>Register</h2>
+      <form action="/register" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

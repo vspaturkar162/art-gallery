@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-header">
+    <h2>Welcome, <%= user.username %>!</h2>
+  </div>
+
+  <div class="dashboard-container">
+    <a href="/add-art.html" class="btn">+ Add New Artwork</a>
+
+    <h3>My Artworks</h3>
+
+    <% if (artworks.length === 0) { %>
+      <p>No artworks uploaded yet.</p>
+    <% } else { %>
+      <div class="artwork-grid">
+        <% artworks.forEach(art => { %>
+          <div class="art-card">
+            <!-- <img src="<%= art.imagePath %>" alt="<%= art.title %>"> -->
+            <div class="art-card-content">
+              <img src="<%= art.imagePath %>" alt="<%= art.title %>">
+              <strong><%= art.title %></strong><br>
+              ₹<%= art.price %><br>
+              <p><%= art.description %></p>
+              <button class="delete-btn" onclick="deleteArtwork('<%= art._id %>', this)">Delete</button>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+  <!-- <script src="server.js"></script> -->
+  <script>
+    async function deleteArtwork(id, btn) {
+      if (!confirm('Are you sure you want to delete this artwork?')) return;
+
+      try {
+        const res = await fetch(`/api/artworks/${id}`, {
+          method: 'DELETE',
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          alert('Artwork deleted!');
+          // Remove the artwork card from DOM
+          // btn.closest('.artwork-card').remove();
+          const card = btn.closest('.artwork-card');
+          card.remove();
+        } else {
+          alert('Delete failed: ' + data.message);
+        }
+      } catch (err) {
+        console.error('Delete error:', err);
+        alert('Something went wrong.');
+      }
+    }
+  </script>
+
+</body>
+</html>
